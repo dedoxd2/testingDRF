@@ -6,7 +6,7 @@ class TestStudentModel(TestCase):
     def setUp(self):
         self.student1 = Student.objects.create(
             first_name="Tom", last_name="Jhon", admission_number=12345)
-
+    # u can initialize variables here and use it in functions
     # setting up new users
     # getting access tokens / logged in users
     # setup timers
