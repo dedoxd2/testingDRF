@@ -12,11 +12,11 @@ class Student(models.Model):
         return self.first_name
 
     def get_grade(self):
-        if self.get_grade < 40:
+        if self.average_score < 40:
             return "Fail"
-        elif 40 < self.get_grade < 70:
+        elif 40 < self.average_score < 70:
             return "Pass"
-        elif 70 < self.get_grade < 100:
+        elif 70 < self.average_score < 100:
             return " Excellent"
         else:
             return "Error"
@@ -25,7 +25,7 @@ class Student(models.Model):
 class Classroom(models.Model):
     name = models.CharField(max_length=120)
     student_capacity = models.IntegerField()
-    # students = models.ManyToManyField()
+    students = models.ManyToManyField('classroom.student')
 
     def __str__(self):
         return self.name
